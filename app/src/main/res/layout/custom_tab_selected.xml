@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/design_border_radius_selected"
+    android:padding="10dp"
+    android:paddingStart="30dp"
+    android:paddingEnd="30dp"
+    android:id="@+id/cat_bg">
+    <TextView
+        android:id="@+id/cat_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Music Award"
+        android:textSize="16sp"
+        android:textColor="@color/colorWhite"/>
+</LinearLayout>

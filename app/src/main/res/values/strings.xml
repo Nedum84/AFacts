@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">aFacts</string>
+    <string name="grammy_fact_at_four_n_finger_tip">Grammy Fact at Four \n Finger Tip</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="skip">Skip</string>
+    <string name="get_started">Get Started</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+
+    <string name="app_url">http://hng.com.ng/afacts</string>
+</resources>
