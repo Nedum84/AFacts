@@ -5,7 +5,10 @@ import android.app.Dialog
 import android.content.DialogInterface
 import android.os.Build
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.view.WindowManager
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
 import com.google.gson.Gson
@@ -53,8 +56,18 @@ class FragmentItemDetails : DialogFragment() {
 
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            activity!!.window.statusBarColor = ContextCompat.getColor(activity!!, R.color.black_overlay)
+            activity!!.window.statusBarColor = ContextCompat.getColor(activity!!, R.color.black)
         }
+
+
+        // Show Status Bar.
+        // Show Status Bar.
+//        val decorView: View = dialog!!.window!!.decorView
+//        val uiOptions = View.SYSTEM_UI_FLAG_VISIBLE
+//        decorView.systemUiVisibility = uiOptions
+
+//        or
+//        activity?.window?.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
     }
 
 
@@ -77,6 +90,7 @@ class FragmentItemDetails : DialogFragment() {
         ClassUtilities().unlockScreen(context)
     }
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -84,13 +98,15 @@ class FragmentItemDetails : DialogFragment() {
         } else {
             setStyle(STYLE_NO_TITLE, android.R.style.Theme_DeviceDefault_Light_NoActionBar)
         }
+
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val dialog = super.onCreateDialog(savedInstanceState)
-        dialog.window!!.requestFeature(Window.FEATURE_NO_TITLE)
+//        dialog.window!!.requestFeature(Window.FEATURE_NO_TITLE)
         dialog.window!!.attributes.windowAnimations = R.style.Animation_WindowSlideUpDown
 //        isCancelable = false
+
         return dialog
     }
 }

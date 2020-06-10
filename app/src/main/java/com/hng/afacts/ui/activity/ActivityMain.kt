@@ -17,6 +17,7 @@ import androidx.viewpager.widget.ViewPager
 import com.google.android.material.shape.CornerFamily
 import com.hng.afacts.R
 import com.hng.afacts.ui.fragment.FragmentCategory
+import com.hng.afacts.ui.fragment.FragmentDialogSavedFacts
 import com.hng.afacts.ui.fragment.FragmentWelcome1
 import com.hng.afacts.utils.ClassShareApp
 import com.hng.afacts.utils.ClassSharedPreferences
@@ -160,7 +161,14 @@ class ActivityMain : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.action_menu_share_app -> {//for news list
-                ClassShareApp(this).shareApp()
+                val fragmentDialogSavedFacts = FragmentDialogSavedFacts()
+                val ft = supportFragmentManager.beginTransaction()
+                val prev = supportFragmentManager.findFragmentByTag(FragmentDialogSavedFacts::class.java.name)
+                if (prev != null) {
+                    ft.remove(prev)
+                }
+                ft.addToBackStack(null)
+                fragmentDialogSavedFacts.show(ft, FragmentDialogSavedFacts::class.java.name)
             }
         }
 
